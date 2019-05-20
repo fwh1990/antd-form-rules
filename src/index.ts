@@ -16,7 +16,7 @@ export class FormRules {
         return new FormRules(fieldLocalName);
     }
 
-    private static formatMessageByLimit(min?: number, max?: number, type: string = '', unit: string = '') {
+    private static formatMessageByLimit(min?: number, max?: number, type: string = '', unit: string = ''): string {
         const existMin = typeof min === 'number';
         const existMax = typeof max === 'number';
         let message: string;
@@ -132,7 +132,7 @@ export class FormRules {
         return this;
     }
 
-    public integer(min?: number, max?: number, message = '') {
+    public integer(min?: number, max?: number, message = ''): FormRules {
         message = message || FormRules.formatMessageByLimit(min, max, '整数', '值');
 
         this.rules.push({
@@ -146,7 +146,7 @@ export class FormRules {
         return this;
     }
 
-    public email(message = ':name必须是个邮箱号') {
+    public email(message = ':name必须是个邮箱号'): FormRules {
         this.rules.push({
             type: FormRuleType.email,
             message: message.replace(':name', this.name),
@@ -155,7 +155,7 @@ export class FormRules {
         return this;
     }
 
-    public match(pattern: RegExp, message = ':name不符合匹配标准') {
+    public match(pattern: RegExp, message = ':name不符合匹配标准'): FormRules {
         this.rules.push({
             type: FormRuleType.string,
             pattern,
@@ -165,7 +165,7 @@ export class FormRules {
         return this;
     }
 
-    public url(message = ':name不符合url规则') {
+    public url(message = ':name不符合url规则'): FormRules {
         this.rules.push({
             type: FormRuleType.url,
             message: message.replace(':name', this.name),
@@ -174,7 +174,7 @@ export class FormRules {
         return this;
     }
 
-    public callback<T extends Error>(func: (value: any, field: string) => T | T[] | void) {
+    public callback<T extends Error>(func: (value: any, field: string) => T | T[] | void): FormRules {
         this.rules.push({
             validator: (rule, value, callback) => {
                 const errors: T | T[] | void = func(value, rule.field);
@@ -186,7 +186,7 @@ export class FormRules {
         return this;
     }
 
-    public identityCard(message = ':name不是有效的身份证') {
+    public identityCard(message = ':name不是有效的身份证'): FormRules {
       return this.match(/^(\d{18}|\d{17}[xX])$/, message);
     }
 
