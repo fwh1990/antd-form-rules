@@ -187,14 +187,16 @@ export class FormRules {
     }
 
     public identityCard(message = ':name不是有效的身份证'): FormRules {
-      return this.match(/^(\d{18}|\d{17}[xX])$/, message);
+        return this.match(/^(\d{18}|\d{17}[xX])$/, message);
+    }
+
+    public resetRule(): FormRules {
+        this.rules = [];
+
+        return this;
     }
 
     public create(): ValidationRule[] {
-        const rules = this.rules;
-
-        this.rules = [];
-
-        return rules;
+        return this.rules;
     }
 }
