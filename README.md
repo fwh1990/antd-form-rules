@@ -113,6 +113,9 @@ FormRules.withName('字段').callback((value, field) => {
 #### identityCard(message?: string)
 第二代身份证
 
+#### withoutWhiteSpace(message?: string)
+禁止包含空格
+
 #### append(obj)
 如果以上规则都不能满足你，那么可以用这个append直接添加antd的原生规则。或者欢迎issue
 ```javascript

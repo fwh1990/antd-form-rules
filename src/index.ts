@@ -190,6 +190,10 @@ export class FormRules {
         return this.match(/^(\d{18}|\d{17}[xX])$/, message);
     }
 
+    public withoutWhiteSpace(message = ':name禁止包含空格'): FormRules {
+        return this.match(/^[^\s]+$/, message);
+    }
+
     public resetRule(): FormRules {
         this.rules = [];
 
