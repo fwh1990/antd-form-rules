@@ -179,7 +179,13 @@ export class FormRules {
             validator: (rule, value, callback) => {
                 const errors: T | T[] | void = func(value, rule.field);
 
-                callback(Array.isArray(errors) ? errors : [errors]);
+                if (Array.isArray(errors)) {
+                    callback(errors);
+                } else if (errors === undefined || errors === null) {
+                    callback([]);
+                } else {
+                    callback([errors]);
+                }
             },
         });
 
