@@ -200,6 +200,15 @@ export class FormRules {
         return this.match(/^[^\s]+$/, message);
     }
 
+    public object(message: string = ':name必须是对象类型'): FormRules {
+        this.rules.push({
+            type: FormRuleType.object,
+            message: message.replace(':name', this.name),
+        });
+
+        return this;
+    }
+
     public resetRule(): FormRules {
         this.rules = [];
 

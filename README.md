@@ -116,6 +116,9 @@ FormRules.withName('字段').callback((value, field) => {
 #### withoutWhiteSpace(message?: string)
 禁止包含空格
 
+#### object(message?: string)
+数据必须是对象。如时间控件返回的是moment的对象
+
 #### append(obj)
 如果以上规则都不能满足你，那么可以用这个append直接添加antd的原生规则。或者欢迎issue
 ```javascript
