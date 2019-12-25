@@ -111,7 +111,7 @@ export class FormRules {
     public phone(message = '请输入正确的:name'): FormRules {
         this.rules.push({
             type: FormRuleType.string,
-            pattern: /^1[3-9]\d{9}$/u,
+            pattern: /^1[3-9]\d{9}$/,
             message: message.replace(':name', this.name),
         });
 
