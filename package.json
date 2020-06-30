@@ -1,15 +1,19 @@
 {
   "name": "antd-form-rules",
-  "version": "1.3.1",
+  "version": "2.0.0",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": "git@github.com:fwh1990/antd-form-rules.git",
   "author": "范文华 <531362022@qq.com>",
   "license": "MIT",
   "peerDependencies": {
-    "antd": "*"
+    "@ant-design/compatible": "*",
+    "antd": ">=4.0.0"
   },
   "devDependencies": {
-    "typescript": "^3.4.5"
+    "@ant-design/compatible": "^1.0.4",
+    "@types/react": "^16.9.41",
+    "antd": "^4.4.0",
+    "typescript": "^3.9.5"
   }
 }

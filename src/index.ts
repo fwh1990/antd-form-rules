@@ -1,4 +1,4 @@
-import { ValidationRule } from 'antd/lib/form';
+import { ValidationRule } from '@ant-design/compatible/lib/form';
 import { FormRuleType } from './FormRuleType';
 
 export { FormRuleType } from './FormRuleType';
